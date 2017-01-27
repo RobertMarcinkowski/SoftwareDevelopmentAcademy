@@ -5,18 +5,18 @@ import java.util.LinkedList;
 
 import pl.sda.exercies.queues.Queues;
 
-public class Lifo implements Queues {
+public class Lifo<T> implements Queues<T> {
 	
-	Deque<String> stack = new LinkedList<>();
+	Deque<T> stack = new LinkedList<>();
 
 	@Override
-	public void push(String element) {
+	public void push(T element) {
 		stack.push(element);
 
 	}
 
 	@Override
-	public String pop() {
+	public T pop() {
 		return stack.pop();
 	}
 

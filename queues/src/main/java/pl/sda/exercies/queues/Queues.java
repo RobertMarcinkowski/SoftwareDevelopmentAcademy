@@ -1,9 +1,9 @@
 package pl.sda.exercies.queues;
 
-public interface Queues {
+public interface Queues<T> {
 	
-	void push(String element);
+	void push(T element);
 	
-	String pop();
+	T pop();
 
 }

@@ -5,17 +5,17 @@ import java.util.Queue;
 
 import pl.sda.exercies.queues.Queues;
 
-public class Fifo implements Queues {
+public class Fifo<T> implements Queues<T> {
 	
-	Queue<String> queue = new LinkedList<>();
+	Queue<T> queue = new LinkedList<>();
 
 	@Override
-	public void push(String element) {
+	public void push(T element) {
 		queue.add(element);
 	}
 
 	@Override
-	public String pop() {
+	public T pop() {
 		return queue.remove();
 	}
 
