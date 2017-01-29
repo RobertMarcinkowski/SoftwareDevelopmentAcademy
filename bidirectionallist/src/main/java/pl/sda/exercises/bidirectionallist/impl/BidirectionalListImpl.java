@@ -1,33 +1,28 @@
 package pl.sda.exercises.bidirectionallist.impl;
 
-import java.util.LinkedList;
-import java.util.ListIterator;
+import java.util.ArrayList;
 
 import pl.sda.exercises.bidirectionallist.BidirectionalList;
 
 public class BidirectionalListImpl<T> implements BidirectionalList<T> {
-	LinkedList<T> list = new LinkedList<>();
-	ListIterator<T> iterator = list.listIterator();
-	T element;
+	ArrayList<T> list = new ArrayList<>();
+	int index = 0;
 
 	@Override
 	public void push(T element) {
+		index = 0;
 		list.add(element);
-		iterator = list.listIterator();
-		this.element = element;
 	}
 
 	@Override
 	public T pop() {
-		T removedElement = list.remove();
-		this.element = list.peek();
-		iterator = list.listIterator();
-		return removedElement;
+		index = 0;
+		return list.remove(list.size());
 	}
 
 	@Override
 	public T readElement() {
-		return element;
+		return list.get(index);
 	}
 
 	@Override
@@ -41,24 +36,22 @@ public class BidirectionalListImpl<T> implements BidirectionalList<T> {
 
 	@Override
 	public T nextElement() {
-		if (iterator.hasNext()) {
-			this.element = iterator.next();
+		if (index + 1 < list.size()) {
+			index++;
 		} else {
-			iterator = list.listIterator();
-			this.element = iterator.next();
+			index = 0;
 		}
-		return element;
+		return list.get(index);
 	}
 
 	@Override
 	public T previousElement() {
-		if (iterator.hasPrevious()) {
-			this.element = iterator.previous();
+		if (index - 1 >= 0) {
+			index--;
 		} else {
-			iterator = list.listIterator(list.size());
-			this.element = iterator.previous();
+			index = list.size() - 1;
 		}
-		return element;
+		return list.get(index);
 	}
 
 }
