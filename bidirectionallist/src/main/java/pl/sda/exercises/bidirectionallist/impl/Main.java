@@ -1,9 +1,9 @@
-package pl.sda.exercises.bidirectionallist;
+package pl.sda.exercises.bidirectionallist.impl;
 
 public class Main {
 
 	public static void main(String[] args) {
-		BidirectionalList<Integer> bl = new BidirectionalList<>();
+		BidirectionalListImpl<Integer> bl = new BidirectionalListImpl<>();
 		bl.push(1);
 		bl.push(2);
 		bl.push(3);
