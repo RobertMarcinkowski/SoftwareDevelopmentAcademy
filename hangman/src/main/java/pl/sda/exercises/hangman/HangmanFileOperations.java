@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class HangmanFileOperations {
@@ -20,6 +21,12 @@ public class HangmanFileOperations {
 			words.add(word);
 		}
 		return words;
+	}
+
+	public Word getRandomWord(File file) throws FileNotFoundException {
+		List<Word> words = getListOfWords(file);
+		Random random = new Random();
+		return words.get(random.nextInt(words.size()));
 	}
 
 }
