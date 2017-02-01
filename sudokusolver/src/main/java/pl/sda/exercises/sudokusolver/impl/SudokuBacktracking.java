@@ -59,6 +59,19 @@ public class SudokuBacktracking implements SudokuSolver {
 		}
 
 		// TODO: add 3X3 check condition
+		int x = i % 9;
+		int y = i / 9;
+
+		for (int j = 0; j < sudoku.length; j++) {
+
+			if (j % 9 / 3 == x / 3 && j / 9 / 3 == y / 3) {
+				if (sudoku[j] == n) {
+					return false;
+				}
+			}
+
+		}
+
 		return true;
 	}
 
