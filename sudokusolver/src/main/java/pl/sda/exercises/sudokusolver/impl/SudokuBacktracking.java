@@ -30,13 +30,15 @@ public class SudokuBacktracking implements SudokuSolver {
 				for (int n = 1; n < 10; n++) {
 					if (possibleInsertion(i, n)) {
 						sudoku[i] = n;
-						if (solve(i)) {
+						if (solve(i + 1)) {
 							return true;
+
 						} else {
 							sudoku[i] = 0;
 						}
 					}
 				}
+				return false;
 			}
 		}
 
@@ -44,11 +46,20 @@ public class SudokuBacktracking implements SudokuSolver {
 	}
 
 	private boolean possibleInsertion(int i, int n) {
-		if (n == 3) {
-			return true;
-		} else {
-			return false;
+
+		for (int j = (i / 9) * 9; j < (((i / 9) * 9) + 9); j++) {
+			if (sudoku[j] == n) {
+				return false;
+			}
 		}
+		for (int j = i % 9; j < sudoku.length; j = j + 9) {
+			if (sudoku[j] == n) {
+				return false;
+			}
+		}
+
+		// TODO: add 3X3 check condition
+		return true;
 	}
 
 	@Override
