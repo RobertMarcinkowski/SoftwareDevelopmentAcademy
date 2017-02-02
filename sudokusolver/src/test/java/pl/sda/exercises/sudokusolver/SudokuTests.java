@@ -20,13 +20,6 @@ public class SudokuTests {
 						0,2,0,3,0,0,0,7,0,
 						0,0,0,0,1,0,4,0,5};
 		
-		for (int i = 0; i < sudoku.length; i++) {
-			int x = i%9;
-			int y = i/9;
-			System.out.printf("(%d,%d)",x/3,y/3);
-			if(x==8) System.out.printf("\n");
-		}
-		
 		int[] sudokuSolved = {	3,4,5,6,9,1,7,8,2,
 								2,6,8,7,3,4,9,5,1,
 								7,1,9,5,2,8,3,6,4,

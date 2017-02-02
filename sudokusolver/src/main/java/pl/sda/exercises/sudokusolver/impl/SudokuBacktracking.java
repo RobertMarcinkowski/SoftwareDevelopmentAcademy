@@ -58,7 +58,6 @@ public class SudokuBacktracking implements SudokuSolver {
 			}
 		}
 
-		// TODO: add 3X3 check condition
 		int x = i % 9;
 		int y = i / 9;
 

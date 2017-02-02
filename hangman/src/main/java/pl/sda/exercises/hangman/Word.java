@@ -44,7 +44,6 @@ public class Word {
 		for (int i = 0; i < word.length(); i++) {
 			if (character == word.charAt(i)) {
 				status = status.substring(0, i) + character + status.substring(i + 1);
-				System.out.println(i + " " + status);
 			}
 		}
 		listUsedCharacters.add(Character.valueOf(character));
@@ -53,7 +52,7 @@ public class Word {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append(word).append(" - Masz ").append(attempts).append(" prob - ");
+		sb.append("Masz ").append(attempts).append(" prob - ");
 		for (int i = 0; i < status.length(); i++) {
 			if (i == status.length() - 1) {
 				sb.append(status.charAt(i));

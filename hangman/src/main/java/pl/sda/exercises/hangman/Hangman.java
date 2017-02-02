@@ -31,6 +31,7 @@ public class Hangman {
 					randomWord.checkWord(input.charAt(0));
 				}
 			} else {
+				System.out.println("To nie to slowo");
 				randomWord.decreaseAttempts();
 			}
 
