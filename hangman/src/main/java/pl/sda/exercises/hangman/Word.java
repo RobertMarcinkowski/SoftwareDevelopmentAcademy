@@ -9,14 +9,6 @@ public class Word {
 	private String status = "";
 	private List<Character> listUsedCharacters = new ArrayList<>();
 
-	public List<Character> getListUsedCharacters() {
-		return listUsedCharacters;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
 	public String getWord() {
 		return word;
 	}
@@ -28,10 +20,6 @@ public class Word {
 		}
 	}
 
-	public int getAttempts() {
-		return attempts;
-	}
-
 	public void setAttempts(int attempts) {
 		this.attempts = attempts;
 	}
@@ -40,13 +28,38 @@ public class Word {
 		attempts--;
 	}
 
-	public void checkWord(char character) {
+	public void indicateCharacter(String input) {
+		char character = input.charAt(0);
 		for (int i = 0; i < word.length(); i++) {
 			if (character == word.charAt(i)) {
 				status = status.substring(0, i) + character + status.substring(i + 1);
 			}
 		}
 		listUsedCharacters.add(Character.valueOf(character));
+	}
+
+	public boolean continueGame(String input) {
+		return ((wordGuessed(word)) && chancesRemained());
+	}
+
+	public boolean wordGuessed(String input) {
+		return input.startsWith(word);
+	}
+
+	public boolean chancesRemained() {
+		return attempts > 1;
+	}
+
+	public boolean characterUsed(String input) {
+		return listUsedCharacters.contains(input.charAt(0));
+	}
+
+	public boolean noCharacterInWord(String input) {
+		return !word.contains(input);
+	}
+
+	public void addCharToList(String input) {
+		listUsedCharacters.add(input.charAt(0));
 	}
 
 	@Override
