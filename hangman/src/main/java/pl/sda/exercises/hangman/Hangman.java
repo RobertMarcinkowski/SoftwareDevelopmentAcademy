@@ -18,20 +18,21 @@ public class Hangman {
 
 		String input = ui.getInput();
 
-		while (!input.startsWith(randomWord.getWord()) && randomWord.getAttempts() > 1) {
+		while (randomWord.continueGame(input)) {
 			if (input.length() == 1) {
-				if (randomWord.getListUsedCharacters().contains(input.charAt(0))) {
-					System.out.println("Znak byl juz wykorzystany");
+				if (randomWord.characterUsed(input)) {
+					ui.characterAlreadyUsed();
 					randomWord.decreaseAttempts();
-				} else if (!randomWord.getWord().contains(input)) {
-					System.out.println("Nie ma takiego znaku w tym slowie");
+				} else if (randomWord.noCharacterInWord(input)) {
+					ui.noSuchCharacter();
 					randomWord.decreaseAttempts();
-					randomWord.getListUsedCharacters().add(input.charAt(0));
+					randomWord.addCharToList(input);
 				} else {
-					randomWord.checkWord(input.charAt(0));
+					randomWord.indicateCharacter(input);
+					ui.characterExists();
 				}
 			} else {
-				System.out.println("To nie to slowo");
+				ui.wrongWord();
 				randomWord.decreaseAttempts();
 			}
 
@@ -39,7 +40,7 @@ public class Hangman {
 			input = ui.getInput();
 
 		}
-		if (input.startsWith(randomWord.getWord())) {
+		if (randomWord.wordGuessed(input)) {
 			ui.printWinGame(randomWord);
 		} else {
 			ui.printLostGame(randomWord);
