@@ -2,6 +2,7 @@ package pl.sda.exercises.hangman;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 
 public class Hangman {
 
@@ -11,8 +12,10 @@ public class Hangman {
 		File file = new File(WORDS_FILE_PATH);
 		HangmanUI ui = new HangmanUI();
 		HangmanFileOperations fileOperations = new HangmanFileOperations();
+		WordsHelper wordsHelper = new WordsHelper();
 		ui.start();
-		Word randomWord = fileOperations.getRandomWord(file);
+		List<Word> wordsList = fileOperations.getListOfWords(file);
+		Word randomWord = wordsHelper.getRandomWord(wordsList);
 
 		ui.printStatus(randomWord);
 

@@ -65,7 +65,7 @@ public class Word {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("Masz ").append(attempts).append(" prob - ");
+		sb.append("You have ").append(attempts).append(" attempts - ");
 		for (int i = 0; i < status.length(); i++) {
 			if (i == status.length() - 1) {
 				sb.append(status.charAt(i));
@@ -74,7 +74,7 @@ public class Word {
 			}
 		}
 		if (listUsedCharacters.size() > 0) {
-			sb.append("\nWykorzystane znaki: ");
+			sb.append("\nUsed letters: ");
 			for (Character character : listUsedCharacters) {
 				sb.append(character).append(" ");
 			}
