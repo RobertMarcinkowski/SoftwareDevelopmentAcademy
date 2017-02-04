@@ -23,10 +23,6 @@ public class HangmanFileOperations {
 		return words;
 	}
 
-	public Word getRandomWord(File file) throws FileNotFoundException {
-		List<Word> words = getListOfWords(file);
-		Random random = new Random();
-		return words.get(random.nextInt(words.size()));
-	}
+	
 
 }

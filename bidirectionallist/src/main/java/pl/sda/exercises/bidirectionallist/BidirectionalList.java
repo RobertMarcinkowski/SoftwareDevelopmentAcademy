@@ -1,15 +1,15 @@
 package pl.sda.exercises.bidirectionallist;
 
 public interface BidirectionalList<T> {
-	public void push(T element);
+	void push(T element);
 
-	public T pop();
+	T pop();
 
-	public T readElement();
+	T readElement();
 
-	public void printCollection();
+	void printCollection();
 
-	public T nextElement();
+	T nextElement();
 
-	public T previousElement();
+	T previousElement();
 }
