@@ -5,28 +5,28 @@ import pl.sda.exercises.bidirectionallist.impl.BidirectionalListImpl;
 public class Main {
 
 	public static void main(String[] args) {
-		BidirectionalListImpl<Integer> bl = new BidirectionalListImpl<>();
-		bl.push(1);
-		bl.push(2);
-		bl.push(3);
-		bl.push(4);
-		bl.push(5);
+		BidirectionalList<Integer> bidirectionalList = new BidirectionalListImpl<>();
+		bidirectionalList.push(1);
+		bidirectionalList.push(2);
+		bidirectionalList.push(3);
+		bidirectionalList.push(4);
+		bidirectionalList.push(5);
 
-		bl.printCollection();
-		System.out.println(bl.readElement());
-		System.out.println(bl.nextElement());
-		System.out.println(bl.nextElement());
-		System.out.println(bl.nextElement());
-		System.out.println(bl.nextElement());
-		System.out.println(bl.nextElement());
-		System.out.println(bl.nextElement());
-		System.out.println(bl.readElement());
-		System.out.println(bl.previousElement());
-		System.out.println(bl.previousElement());
-		System.out.println(bl.previousElement());
-		System.out.println(bl.previousElement());
-		System.out.println(bl.previousElement());
-		System.out.println(bl.previousElement());
+		bidirectionalList.printCollection();
+		System.out.println(bidirectionalList.readElement());
+		System.out.println(bidirectionalList.nextElement());
+		System.out.println(bidirectionalList.nextElement());
+		System.out.println(bidirectionalList.nextElement());
+		System.out.println(bidirectionalList.nextElement());
+		System.out.println(bidirectionalList.nextElement());
+		System.out.println(bidirectionalList.nextElement());
+		System.out.println(bidirectionalList.readElement());
+		System.out.println(bidirectionalList.previousElement());
+		System.out.println(bidirectionalList.previousElement());
+		System.out.println(bidirectionalList.previousElement());
+		System.out.println(bidirectionalList.previousElement());
+		System.out.println(bidirectionalList.previousElement());
+		System.out.println(bidirectionalList.previousElement());
 
 	}
 

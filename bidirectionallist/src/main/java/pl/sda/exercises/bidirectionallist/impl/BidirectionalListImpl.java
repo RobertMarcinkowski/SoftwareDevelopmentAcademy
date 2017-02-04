@@ -1,12 +1,18 @@
 package pl.sda.exercises.bidirectionallist.impl;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import pl.sda.exercises.bidirectionallist.BidirectionalList;
 
 public class BidirectionalListImpl<T> implements BidirectionalList<T> {
-	ArrayList<T> list = new ArrayList<>();
-	int index = 0;
+	private List<T> list;
+	private int index;
+	
+	public BidirectionalListImpl() {
+		this.list = new ArrayList<>();
+		this.index = 0;
+	}
 
 	@Override
 	public void push(T element) {
