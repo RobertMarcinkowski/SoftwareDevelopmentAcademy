@@ -39,7 +39,7 @@ public class Word {
 	}
 
 	public boolean continueGame(String input) {
-		return ((wordGuessed(word)) && chancesRemained());
+		return chancesRemained() && !wordGuessed(input);
 	}
 
 	public boolean wordGuessed(String input) {
