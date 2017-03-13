@@ -2,4 +2,4 @@
 .directory
 .classpath
 .project
-/target
+*/target
