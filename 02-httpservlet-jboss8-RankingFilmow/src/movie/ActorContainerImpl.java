@@ -18,4 +18,6 @@ public class ActorContainerImpl implements ActorContainer {
 	public void setActors(List<Actor> actors) {
 		this.actors = actors;
 	}
+	
+	
 }
