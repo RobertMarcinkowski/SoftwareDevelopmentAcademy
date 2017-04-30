@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<web-app xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" xmlns="http://java.sun.com/xml/ns/javaee" metadata-complete="false" version="3.0">
+
+<welcome-file-list>
+<welcome-file>formularz.html</welcome-file>
+</welcome-file-list>
+
+ <servlet>
+    <servlet-name>GetMovieServlet</servlet-name>
+    <servlet-class>movie.GetMovieServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>MovieListServlet</servlet-name>
+    <servlet-class>movie.MovieListServlet</servlet-class>
+  </servlet>  
+  
+  <servlet>
+    <servlet-name>AddNewMovieServlet</servlet-name>
+    <servlet-class>movie.AddNewMovieServlet</servlet-class>
+  </servlet> 
+  
+   <servlet-mapping>
+    <servlet-name>GetMovieServlet</servlet-name>
+    <url-pattern>/search</url-pattern>
+  </servlet-mapping>   
+ 
+  <servlet-mapping>
+    <servlet-name>MovieListServlet</servlet-name>
+    <url-pattern>/list.html</url-pattern>
+  </servlet-mapping>
+    
+  <servlet-mapping>
+    <servlet-name>AddNewMovieServlet</servlet-name>
+    <url-pattern>/newMovie</url-pattern>
+  </servlet-mapping>    
+  
+ 
+</web-app>    
