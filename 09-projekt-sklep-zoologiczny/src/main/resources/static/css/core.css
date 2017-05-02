@@ -1,0 +1,7 @@
+ul {
+    float: left;
+    text-decoration: none;
+}
+input, select, label {
+    margin: 5px;
+}
